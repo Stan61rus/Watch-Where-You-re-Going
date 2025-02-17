@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
-    public float speed = 50;
+    public float rotateSpeed = 50;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -13,6 +13,6 @@ public class NewMonoBehaviourScript : MonoBehaviour
     void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
-        transform.Rotate(Vector3.up, horizontalInput * Time.deltaTime * speed );
+        transform.Rotate(Vector3.up, horizontalInput * Time.deltaTime * rotateSpeed);
     }
 }
