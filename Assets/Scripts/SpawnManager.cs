@@ -3,10 +3,17 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject enemy;
+    private float spawnRange = 9f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Instantiate(enemy,new Vector3(0, 0, 6), enemy.transform.rotation);
+        float spawnPosX = Random.Range(-spawnRange, spawnRange);
+        float spawnPosZ = Random.Range(-spawnRange, spawnRange);
+
+        Vector3 randomPos = new Vector3(spawnPosX, 0, spawnPosZ);
+
+        Instantiate(enemy, randomPos, enemy.transform.rotation);
     }
 
     // Update is called once per frame
